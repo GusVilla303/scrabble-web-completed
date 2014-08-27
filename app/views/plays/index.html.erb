@@ -1,10 +1,17 @@
 <h1>Scrabble-Web</h1>
 
-<%= link_to "Play New Word", '#' %>
+<%= link_to "Play New Word", new_play_path %>
 
 <div id="previous_words">
   <h3>Previous Words</h3>
   <ul id="plays">
-    <li>Previous words go here</li>
+    <% @plays = @plays.reverse[0..2] %>
+    <% @plays.each do |play| %>
+    <li id="play<%= play.id %>">
+      <strong><%= play.word.downcase %></strong>
+      with a score of: <%= play.score %>
+      <%= link_to "Delete", play_path(play), method: :delete %> 
+    </li>
+    <% end %>
   </ul>
 </div>

@@ -21,7 +21,6 @@ class DisplayingPlaysTest < ActionDispatch::IntegrationTest
   end
 
   def test_it_displays_only_three_previous_plays
-    skip
     visit '/plays'
     within("#plays") do
       first_words.each do |word, score|

@@ -17,4 +17,5 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'capybara'
   gem 'launchy'
+  gem 'quiet_assets'
 end
